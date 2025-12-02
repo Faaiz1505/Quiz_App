@@ -40,9 +40,6 @@ Contact
 
 ## 🖼️ Preview
 
-(Add your screenshot here — upload an image to your repo and link it)
-Example:
-
 ![Quiz App Screenshot](./assets/screenshot.png)
 
 ---
