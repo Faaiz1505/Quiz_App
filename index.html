@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quiz App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1 class="brand">NafasHub • Quiz Lab</h1>
+        <div class="controls">
+          <label for="category" class="sr-only">Choose category</label>
+          <select id="category" aria-label="Choose quiz category">
+            <option value="pick" id="pick">pick a subject</option>
+            <option value="general">General Knowledge</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+          </select>
+          <button id="start-btn" class="btn primary" aria-label="Start quiz">
+            Start
+          </button>
+        </div>
+      </header>
+
+      <section class="card" id="quiz-card" aria-live="polite">
+        <div class="meta">
+          <div class="progress-wrap" aria-hidden="true">
+            <div id="progress" class="progress">
+              <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <div class="meta-right">
+              <div id="timer" class="timer" aria-live="polite">60s</div>
+              <div id="highscore" class="highscore" aria-live="polite">
+                High: —
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="question-area" class="question-area hidden">
+          <h2 id="question-text" class="question">Question will appear here</h2>
+
+          <ul
+            id="options"
+            class="options"
+            role="listbox"
+            aria-label="Answer choices"
+          >
+            <!-- options injected here -->
+          </ul>
+
+          <div class="footer">
+            <div class="score-panel">
+              <div id="score" class="score">Score: 0</div>
+              <div id="qcount" class="qcount">0 / 0</div>
+            </div>
+
+            <button
+              id="next-btn"
+              class="btn secondary hidden"
+              aria-label="Next question"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="result-box"
+          class="result-box hidden"
+          role="status"
+          aria-live="polite"
+        >
+          <div class="result-card">
+            <h2 id="final-title" class="">Well done!</h2>
+            <p id="score-text" class="final-score">You scored 0 / 0</p>
+            <p id="percent-text" class="percent-text">0%</p>
+            <p id="best-text" class="best-text">Best for this category: —</p>
+            <div class="result-actions">
+              <button id="retry-btn" class="btn primary">Play Again</button>
+              <button id="change-btn" class="btn secondary">
+                Change Category
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- confetti container -->
+    <div id="confetti-wrap" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
